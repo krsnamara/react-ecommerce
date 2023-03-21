@@ -5,12 +5,13 @@ This is the repo for an Ecommerce site that will allow client to list and sell p
 ***
 ## Technologies Used
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,git,github,vscode&perline=4)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,redux,git,github,vscode&perline=4)](https://skillicons.dev)
 
 - HTML5
 - CSS3
 - JavaScript
 - React
+- Redux
 - Virtual Studio Code
 - Git/Github
 
