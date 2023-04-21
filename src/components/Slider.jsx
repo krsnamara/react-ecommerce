@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import styled from 'styled-components'
 import { sliderItems } from '../data';

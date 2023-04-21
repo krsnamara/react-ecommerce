@@ -27,16 +27,20 @@ export const categories = [
         id: 1,
         img: "https://cdn.shopify.com/s/files/1/0055/1242/products/EXP60PAZ-Aster-Blue-1_2048x.jpg?v=1520642568",
         title: "SHIRT STYLE!",
+        cat:"women"
     },
     {
         id: 2,
         img: "https://pyxis.nymag.com/v1/imgs/1c6/841/5c709b37d80b170dab635914cdbdc9d683.rsquare.w600.jpg",
         title: "LOUNGEWEAR LOVE",
+        cat:"coat"
+        
     },
     {
         id: 3,
         img: "https://cdn.shopify.com/s/files/1/0055/1242/files/Lifestyle-1-EXP52BMR_5f109608-4bd7-4d27-82ee-fd1d40428f02.jpg?844168297892011037",
         title: "LIGHT JACKETS",
+        cat:"jeans"
     },
 ]
 
