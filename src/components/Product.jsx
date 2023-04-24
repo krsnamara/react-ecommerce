@@ -59,11 +59,11 @@ const Icon = styled.div`
     }
 `;
 
-const Product = ({item}) => {
+const Product = ({item, key}) => {
   return (
     <Container>
         <Circle/>
-        <Image src={item.img}/>
+        <Image src={item.image} alt={key}/>
         <Info>
             <Icon>
                 <ShoppingBagOutlined/>

@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
 import Register from "./pages/Register";
@@ -9,26 +9,14 @@ import Cart from "./pages/Cart";
 const App = () => {
   const user = true
   return (
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/products/:category">
-          <ProductList />
-        </Route>
-        <Route path="/product/:id">
-          <Product />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="/login">
-          {user ? <Redirect to="/"/> : <Login/>}
-        </Route>
-        <Route path="/register">
-        {user ? <Redirect to="/"/> : <Register />}
-        </Route>
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/products/:category" element={<ProductList />} />
+        <Route path="/product/:id" element={<Product />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={user ? <Navigate to="/"/> : <Login/>} />
+        <Route path="/register" element={user ? <Navigate to="/"/> : <Register />} />
+      </Routes>
   );
 };
 

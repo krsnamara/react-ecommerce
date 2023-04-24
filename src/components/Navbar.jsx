@@ -3,6 +3,7 @@ import Badge from '@mui/material/Badge';
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from "../responsive"
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     height: 60px;
@@ -69,6 +70,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+
   return (
     <Container>
         <Wrapper>
@@ -80,8 +82,10 @@ const Navbar = () => {
                 </SearchContainter>
             </Left>
             <Center>
+                <Link to="/">
                 <Logo>Weber Works.</Logo>
                 <LogoSmall>Weber Works.</LogoSmall>
+                </Link>
             </Center>
             <Right>
                 <MenuItem>REGISTER</MenuItem>
