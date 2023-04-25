@@ -52,7 +52,7 @@ const ProductList = () => {
         })
     }
 
-    console.log(filters);
+    // console.log(filters);
   return (
     <Container>
         <Navbar/>
