@@ -77,7 +77,6 @@ const Payment = styled.img`
 
 const Footer = () => {
     const navigate = useNavigate();
-
     const homeClick = () => {
         navigate("/");
     };
@@ -93,7 +92,7 @@ const Footer = () => {
   return (
     <Container>
         <Left>
-            <Logo>Weber Machine Works.</Logo>
+            <Logo>Weber Machine Works</Logo>
             <Description>
                 There are many variations of passages of Lorem Ipsum available, but 
                 the majority have suffered alteration in some form, by injected 
@@ -123,8 +122,6 @@ const Footer = () => {
                 <ListItem onClick={womenClick} style={{cursor:"pointer"}}>Women's Fashion</ListItem>
                 <ListItem>Accessories</ListItem>
                 <ListItem>My Account</ListItem>
-                <ListItem>Order Tracking</ListItem>
-                <ListItem>Wishlist</ListItem>
             </List>
         </Center>
         <Right>

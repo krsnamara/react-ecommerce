@@ -3,7 +3,7 @@ import Badge from "@mui/material/Badge";
 import React from "react"
 import styled from "styled-components"
 import { mobile } from "../responsive"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
@@ -24,11 +24,6 @@ const Left = styled.div`
     display: flex;
     align-items: center;
 `;
-const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
-    ${mobile({ display: "none" })}
-`;
 const SearchContainter = styled.div`
     border: 0.5px solid lightgray;
     display: flex;
@@ -41,10 +36,11 @@ const Input = styled.input`
     border: none;
     ${mobile({ width: "50px" })}
 `;
-const Center = styled.div`
-    flex: 1;
-    text-align: center;
-`;
+// const Center = styled.div`
+//     flex: 1;
+//     display: flex;
+//     align-items: flex-end;
+// `;
 const Logo = styled.h1`
     font-weight: bold;
     ${mobile({ display: "none" })}
@@ -72,27 +68,27 @@ const MenuItem = styled.div`
 
 const Navbar = () => {
     const quantity = useSelector(state=>state.cart.quantity)
+    const user = useSelector(state => state.user.currentUser)
 
+    const navigate = useNavigate();
+    const homeClick = () => {
+        navigate("/");
+    };
   return (
     <Container>
         <Wrapper>
-            <Left>
-                <Language>EN</Language>
+            <Left onClick={homeClick} style={{cursor:"pointer"}}>
+                <Logo>Weber Machine Works</Logo>
+                <LogoSmall>Weber Machine Works</LogoSmall>
+            </Left>
+            <Right>
                 <SearchContainter>
                     <Input placeholder='Search'/>
                     <Search style={{color:"gray", fontSize:"16px"}}/>
                 </SearchContainter>
-            </Left>
-            <Center>
-                <Link to="/">
-                <Logo>Weber Works.</Logo>
-                <LogoSmall>Weber Works.</LogoSmall>
-                </Link>
-            </Center>
-            <Right>
-                <Link to="/register">
+                {user !== <Link to="/register">
                 <MenuItem>REGISTER</MenuItem>
-                </Link>
+                </Link>}
                 <Link to="/login">
                 <MenuItem>SIGN IN</MenuItem>
                 </Link>
