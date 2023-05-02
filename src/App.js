@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 
 const App = () => {
-  const user = true
+  const user = false
   return (
       <Routes>
         <Route exact path="/" element={<Home />} />
