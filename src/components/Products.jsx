@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Product from "./Product";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URLS } from "../urls";
 
 const Container = styled.div`
     padding: 20px;
@@ -18,8 +19,8 @@ const Products = ({cat,filters,sort}) => {
     const getProducts = async () =>{
       try {
         const res = await axios.get(cat 
-          ? `http://localhost:3000/api/products?category=${cat}` 
-          : "http://localhost:3000/api/products");
+          ? `${API_URLS.CATEGORY}${cat}` 
+          : `${API_URLS.ALL}`);
         setProducts(res.data);
       } catch (err) {}
     };
