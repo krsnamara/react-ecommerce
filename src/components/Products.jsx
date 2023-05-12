@@ -21,20 +21,23 @@ const Products = ({cat,filters,sort}) => {
         const res = await axios.get(cat 
           ? `${API_URLS.CATEGORY}${cat}` 
           : `${API_URLS.ALL}`);
+          console.log(API_URLS.ALL)
         setProducts(res.data);
       } catch (err) {}
     };
     getProducts();
   }, [cat]);
 
-  useEffect(()=>{
-    cat && setFilteredProducts(
-      products.filter((item)=> 
-        Object.entries(filters).every(([key,value])=> 
-          item[key].includes(value)
+  useEffect(() => {
+    if (Array.isArray(products)) {
+      cat && setFilteredProducts(
+        products.filter((item)=> 
+          Object.entries(filters).every(([key,value])=> 
+            item[key].includes(value)
+          )
         )
-      )
-    );
+      );
+    }
   },[products,cat,filters])
 
   useEffect(() => {
