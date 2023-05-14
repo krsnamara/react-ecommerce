@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
 import {mobile} from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     width: 100vw;
@@ -39,7 +40,7 @@ const Input = styled.input`
     margin: 10px 0px;
     padding: 10px;
 `;
-const Link = styled.a`
+const LinkStyle = styled.a`
   margin: 7px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -94,8 +95,8 @@ const handleClick = (e) => {
                 />
                 <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
                 {error && <Error>Something went wrong...</Error>}
-                <Link>DO NOT REMEBER PASSWORD?</Link>
-                <Link>CREATE A NEW ACCOUNT</Link>
+                <LinkStyle>DO NOT REMEBER PASSWORD?</LinkStyle>
+                <LinkStyle to="/register">CREATE A NEW ACCOUNT</LinkStyle>
             </Form>
         </Wrapper>
     </Container>
