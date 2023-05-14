@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethod";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -160,6 +160,7 @@ const Button = styled.button`
 
 const Cart = () => {
     const cart = useSelector(state=>state.cart)
+    const quantity = useSelector(state=>state.cart.quantity)
     const [stripeToken, setStripeToken] = useState(null)
     const navigate = useNavigate();
 
@@ -187,12 +188,14 @@ const Cart = () => {
         <Wrapper>
             <Title>YOUR BAG</Title>
             <Top>
+                <Link to="/">
                 <TopButton>CONTINUE SHOPPING</TopButton>
+                </Link>
                 <TopTexts>
-                    <TopText>Shopping Bag(2)</TopText>
+                    <TopText>Shopping Bag({cart.quantity})</TopText>
                     <TopText>Your Wishlist (0)</TopText>
                 </TopTexts>
-                <TopButton type="filled">CHECKOUT NOW</TopButton>
+                {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
             </Top>
             <Bottom>
                 <Info>
